@@ -43,6 +43,13 @@ System.out.println(6 + "味地黄丸"); // 输出 6味地黄丸
 int flag = 1 > 2 ? 1 : 0	// 0
 ```
 
+数组
+```java
+int arr[] = new int[]{1, 2, 3};
+int arr[] = new int[3];
+int len = arr.length;
+```
+
 Java 数据输入
 
 ```java
