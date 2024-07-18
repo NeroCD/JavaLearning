@@ -95,6 +95,8 @@ public class Student {
 
 # 数据结构
 
+## String
+
 ```java
 // String
 char[] chs = {'a', 'b', 'c'};
@@ -137,3 +139,77 @@ str.reverse();  // 反转
 String s = str.toString();
 StringBuilder sb = new StringBuilder(s);
 ```
+
+## ArrayList
+
+```java
+// 一种存储空间可变的存储模型，数组实现，长度可变
+// ArrayList是一个泛型集合，它只能包含对象类型，int是基本类型无法包括，但可以包括Integer，因为Integer是包含int的对象
+ArrayList<String> arr = new ArrayList<>();
+arr.add(String str);     // 在末尾增加元素
+arr.add(int index, String str)  // 在指定索引处增加元素
+arr.remove(String str);  // 从头开始删除一个指定元素，返回是否成功
+arr.remove(int index);   // 删除指定索引处的元素
+arr.set(int index, String str); // 修改指定索引处的元素，返回之前的元素
+arr.get(int index);      // 返回指定索引处的元素
+arr.size();
+
+ArrayList arr = new ArrayList();    // 此时可以放置任何元素
+```
+
+# 继承
+
+Java 只支持单继承，不支持多继承，但支持多层继承
+
+```java
+public class Daddy {}
+public class son extends Daddy {}
+```
+
+继承后，子类可以使用父类中非私有成员
+
+继承中变量访问采用就近原则，首先在子类局部找，然后在子类成员找，最后在父类成员找。即在上述三个范围中变量可以重名
+
+super: 父类对象引用
+
+this: 子类对象引用
+
+子类中所有构造方法默认都会访问父类中无参的构造方法，故建议在父类中给出无参构造方法
+
+在对象的堆内存中，会单独存在一块 super 区域用于存放父类数据
+
+## 方法重写
+
+子类中出现和父类一样的方法声明，包括方法名和参数列表，需要通过 Override 注解（不能重写私有方法，被重写的方法权限不能比原方法权限更低）
+
+```java
+class Daddy {
+    public void say (int i) {
+        System.out.println("I am Daddy");
+    }
+}
+
+class son extends Daddy {
+    @Override
+    public void say (int i) {
+        System.out.println("I am son");
+    }
+}
+```
+
+# 修饰符
+
+## package
+
+## import
+
+## 权限修饰符
+
+public：都可以访问
+protected：包内可以访问，包外子类可以访问
+默认：包内可以访问
+private：类内可以访问
+
+## final
+
+## static
