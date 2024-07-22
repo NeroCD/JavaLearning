@@ -1,6 +1,6 @@
 package com;
 
-public class Test{
+public class Test extends Object{
     public static void main(String[] args) {
         test t = new test();
         t.fun(8);
