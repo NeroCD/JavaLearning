@@ -1,9 +1,15 @@
 package com;
 
-public class Test extends Object{
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+public class Test extends Object {
     public static void main(String[] args) {
-        test t = new test();
-        t.fun(8);
+        Map<Integer, Integer> m = new HashMap<>();
+        m.put(1,1);
+        
     }
 }
 
