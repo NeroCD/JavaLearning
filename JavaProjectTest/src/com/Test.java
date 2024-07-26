@@ -4,21 +4,22 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Test extends Object {
     public static void main(String[] args) throws IOException {
-        SellTicket st = new SellTicket();
+        ArrayList<String> list = new ArrayList<String>();
 
-        //创建三个Thread类的对象，把SellTicket对象作为构造方法的参数，并给出对应的窗口名称
-        Thread t1 = new Thread(st,"窗口1");
-        Thread t2 = new Thread(st,"窗口2");
-        Thread t3 = new Thread(st,"窗口3");
+        list.add("林青霞");
+        list.add("张曼玉");
+        list.add("王祖贤");
+        list.add("柳岩");
+        list.add("张敏");
+        list.add("张无忌");
 
-        //启动线程
-        t1.start();
-        t2.start();
-        t3.start();
+        //Stream流来改进
+        list.stream().filter(s -> s.startsWith("张")).filter(s -> s.length() == 3).forEach(System.out::println);
     }
 }
 
